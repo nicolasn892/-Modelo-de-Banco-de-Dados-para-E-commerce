@@ -1,0 +1,43 @@
+erDiagram
+    Cliente {
+        id_cliente PK
+        nome
+        cpf_cnpj
+        tipo_cliente
+    }
+    
+    FormaPagamento {
+        id_forma_pagamento PK
+        descricao
+        dados_pagamento
+    }
+    
+    Entrega {
+        id_entrega PK
+        status
+        codigo_rastreio
+    }
+    
+    Pedido {
+        id_pedido PK
+        data_pedido
+        id_cliente FK
+    }
+    
+    ItemPedido {
+        id_item_pedido PK
+        id_pedido FK
+        id_produto FK
+        quantidade
+        valor_unitario
+    }
+    
+    PedidoRelFormaPagamento {
+        id_pedido FK
+        id_forma_pagamento FK
+    }
+    
+    PedidoRelEntrega {
+        id_pedido FK
+        id_entrega FK
+    }
